@@ -1,6 +1,7 @@
 class Backpack {
-    constructor(name, volume, color, pocketNum, strapLengthL, strapLengthR, lidOpen, dateAcquired, image) {
-        this.name = name;
+    constructor(id, name, volume, color, pocketNum, strapLengthL, strapLengthR, lidOpen, dateAcquired, image) {
+        this.id = id,
+            this.name = name;
         this.volume = volume;
         this.color = color;
         this.pocketNum = pocketNum;
