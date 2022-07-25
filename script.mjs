@@ -6,7 +6,7 @@ const content = backpackObjectArray.map((backpack) => {
     backpackArticle.setAttribute("id", backpack.id);
     backpackArticle.innerHTML = `
         <figure class="backpack__image">
-            <img src="${backpack.image}" alt="" href="/assets/images/everyday.svg" loading="lazy"/>
+            <img src="${backpack.image}" alt="" loading="lazy"/>
         </figure>
         <h1 class="backpack__name">${backpack.name}</h1>
         <ul class="backpack__features">
@@ -24,7 +24,17 @@ const content = backpackObjectArray.map((backpack) => {
             <li class="feature backpack__lid">Lid status:<span> ${backpack.lidOpen ? "open" : "closed"
         }</span></li>
         </ul>
+        <button class="lid-toggle">Open lid</button>
         `;
+
+    const button = backpackArticle.querySelector(".lid-toggle");
+    const status = backpackArticle.querySelector(".backpack__lid span");
+
+    button.addEventListener("click", (event) => {
+        console.log(event);
+        status.innerText === "open" ? status.innerText = "closed" : status.innerText = "open"
+    })
+
     return backpackArticle;
 });
 
@@ -49,31 +59,3 @@ navList.innerHTML = navContent;
 mainNav.append(navList);
 
 document.querySelector(".siteheader").append(mainNav);
-
-const usedStatus = () => {
-    let age = everydayPack.backpackAge();
-    let description;
-
-    switch (true) {
-        case age < 30:
-            description = "new"
-            break;
-        case age >= 30 && age < 365:
-            description = "lightly used"
-            break;
-        case age >= 365 && age < 1095:
-            description = "used"
-            break;
-        case age >= 1095:
-            description = "old"
-            break;
-        default:
-            console.log('There is no description for ${age}.');
-    }
-
-    console.log(`
-    Age: ${age} days
-    Status: ${description}
-    `);
-};
-usedStatus();
