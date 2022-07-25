@@ -14,22 +14,22 @@ const everydayPack = new Backpack(
 
 const content = `
 <figure class="backpack__image">
-    <img src="${everydayPack.image}" alt="" href="/assets/images/everyday.svg" />
+    <img src="${everydayPack.image}" alt="" href="/assets/images/everyday.svg" loading="lazy"/>
 </figure>
 <h1 class="backpack__name">${everydayPack.name}</h1>
 <ul class="backpack__features">
-    <li class="packprop backpack__volume">Volume:<span> ${everydayPack.volume
+    <li class="feature backpack__volume">Volume:<span> ${everydayPack.volume
     }</span></li>
-    <li class="packprop backpack__color">Color:<span> ${everydayPack.color
+    <li class="feature backpack__color">Color:<span> ${everydayPack.color
     }</span></li>
     <li class="backpack__age">Age:<span> ${everydayPack.backpackAge()} days old</span></li>
-    <li class="packprop backpack__pockets">Number of pockets:<span> ${everydayPack.pocketNum
+    <li class="feature backpack__pockets">Number of pockets:<span> ${everydayPack.pocketNum
     }</span></li>
-    <li class="packprop backpack__strap">Left strap length:<span> ${everydayPack.strapLengthL.left
+    <li class="feature backpack__strap">Left strap length:<span> ${everydayPack.strapLengthL.left
     } inches</span></li>
-    <li class="packprop backpack__strap">Right strap length:<span> ${everydayPack.strapLengthL.right
+    <li class="feature backpack__strap">Right strap length:<span> ${everydayPack.strapLengthL.right
     } inches</span></li>
-    <li class="packprop backpack__lid">Lid status:<span> ${everydayPack.lidOpen
+    <li class="feature backpack__lid">Lid status:<span> ${everydayPack.lidOpen ? "open" : "closed"
     }</span></li>
 </ul>
 `;
@@ -58,5 +58,4 @@ const navList = document.createElement("ul")
 navList.innerHTML = navContent;
 mainNav.append(navList);
 
-document.querySelector(".siteheader").append(mainNav)
-
+document.querySelector(".siteheader").append(mainNav);
