@@ -86,9 +86,9 @@ const backpackList = backpackObjectArray.map((backpack) => {
             <li class="backpack__age">Age:<span> ${backpack.backpackAge()} days old</span></li>
             <li class="feature backpack__pockets">Number of pockets:<span> ${backpack.pocketNum
         }</span></li>
-            <li class="feature backpack__strap">Left strap length: <span> ${backpack.strapLengthL.left
+            <li class="feature backpack__strap" data-side ="left">Left strap length:<span> ${backpack.strapLength.left
         } inches</span></li>
-            <li class="feature backpack__strap">Right strap length: <span> ${backpack.strapLengthL.right
+            <li class="feature backpack__strap" data-side="right">Right strap length:<span> ${backpack.strapLength.right
         } inches</span></li>
             <li class="feature backpack__lid">Lid status: <span> ${backpack.lidOpen ? "open" : "closed"
         }</span></li>

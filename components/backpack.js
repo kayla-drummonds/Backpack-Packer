@@ -5,7 +5,7 @@ class Backpack {
         this.volume = volume;
         this.color = color;
         this.pocketNum = pocketNum;
-        this.strapLengthL = {
+        this.strapLength = {
             left: strapLengthL,
             right: strapLengthR,
         };
