@@ -17,7 +17,7 @@ const lidToggle = function (event, button) {
     // Set visible property status text
     let status = button.parentElement.querySelector(".backpack__lid span");
     status.innerText == "closed" ? (status.innerText = "open") : (status.innerText = "closed");
-}
+};
 
 // Strap length functionality
 const newStrapLength = (strapArray) => {
@@ -61,7 +61,7 @@ const newStrapLength = (strapArray) => {
 - create article for each entry
 - add articles back to backpackList array
  */
-const content = backpackObjectArray.map((backpack) => {
+const backpackList = backpackObjectArray.map((backpack) => {
     let backpackArticle = document.createElement("article");
     backpackArticle.classList.add("backpack");
     backpackArticle.setAttribute("id", backpack.id);
@@ -107,7 +107,7 @@ const content = backpackObjectArray.map((backpack) => {
 // Append each backpack item to the main
 const main = document.querySelector(".maincontent");
 
-content.forEach((backpack) => {
+backpackList.forEach((backpack) => {
     main.append(backpack);
 });
 
